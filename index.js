@@ -3,11 +3,11 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const flash = require('connect-flash');
 
-const db = require('./db')
+// const db = require('./db')
 const app = express()
 const port = 5001
 
-const todoController = require('./controllers/todo')
+// const todoController = require('./controllers/todo')
 const userController = require('./controllers/user')
 const commentController = require('./controllers/comment')
 
@@ -27,9 +27,9 @@ app.use((req, res, next) => {
   next()
 })
 
-app.post('/todos', todoController.newTodo)
-app.get('/todos', todoController.getAll)
-app.get('/todos/:id', todoController.get)
+// app.post('/todos', todoController.newTodo)
+// app.get('/todos', todoController.getAll)
+// app.get('/todos/:id', todoController.get)
 app.get('/', commentController.index)
 
 function redirectBack(req, res) {
@@ -48,6 +48,6 @@ app.get('/update_comments/:id', commentController.update)
 app.post('/update_comments/:id', commentController.handleUpdate)
 
 app.listen(port, () => {
-  db.connect()
+  //db.connect()
   console.log(`Example app listening on port ${port}!`)
 })
