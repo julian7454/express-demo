@@ -5,7 +5,7 @@ const flash = require('connect-flash');
 
 // const db = require('./db')
 const app = express()
-const port = 5001
+const port = process.env.PORT || 5001
 
 // const todoController = require('./controllers/todo')
 const userController = require('./controllers/user')
